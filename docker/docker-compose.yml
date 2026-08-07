@@ -1,0 +1,14 @@
+version: "3"
+services:
+  django:
+    build: ./server
+    ports:
+      - "8000:8000"
+  flask:
+    build: ./server/flask_sentiment
+    ports:
+      - "5001:5001"
+  react:
+    build: ./frontend
+    ports:
+      - "3000:3000"

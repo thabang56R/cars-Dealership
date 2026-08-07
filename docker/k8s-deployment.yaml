@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cars-dealership
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dealership
+  template:
+    metadata:
+      labels:
+        app: dealership
+    spec:
+      containers:
+      - name: django
+        image: your-django-image
+        ports:
+        - containerPort: 8000
+      - name: flask
+        image: your-flask-image
+        ports:
+        - containerPort: 5001
+      - name: react
+        image: your-react-image
+        ports:
+        - containerPort: 3000
